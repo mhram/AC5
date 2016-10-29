@@ -1,0 +1,60 @@
+
+public class MatrixMultiplication {
+
+	public static void main(String[] args) {
+		int firstarray[][]= new int[6][4];
+        int secondarray[][]=new int[4][2];
+
+        fill(firstarray);
+        fill(secondarray);
+        
+        System.out.println("This is the first array");
+        display(firstarray);
+
+        System.out.println("This is the second array");
+        display(secondarray);
+        
+        
+        
+        
+      
+               
+        System.out.println("This is the result array");
+        display(multiply(firstarray,secondarray));
+	}
+        
+
+    
+
+    public static void display(int x[][]) { //display the array
+        for (int row = 0; row < x.length; row++) {
+            for (int column = 0; column < x[row].length; column++) {
+                System.out.print(x[row][column] + "\t");
+            }
+            System.out.println();
+        }}
+    
+        public static void fill (int x[][]) { //fill the array
+            for (int row = 0; row < x.length; row++) {
+                for (int column = 0; column < x[row].length; column++) {
+                	x[row][column] =(int) (Math.random()*10); //fill the array with random numbers beteen 0 till 10
+                }
+                
+            }
+            
+            
+
+	}
+
+        public static int[][] multiply(int[][] a, int[][] b) {
+          
+            int c[][]=new int[a.length][b[0].length];//suppose 
+                        for (int i = 0; i < a.length; i++)
+                for (int j = 0; j < b[0].length; j++)
+                    for (int k = 0; k <  a[0].length; k++)
+                        c[i][j] += a[i][k] * b[k][j];
+            return c;
+            }
+        
+
+}
